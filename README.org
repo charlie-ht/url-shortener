@@ -1,0 +1,13 @@
+#+title: URL shortener
+
+A very simplistic URL shortener for personal use. Shortens URLs using
+base-62 encoding.
+
+I run it on my personal server to short-link to various files,
+intended just for personal use.
+
+#+begin_src shell-script
+python shorten.py
+url=$(curl -q -o-  http://localhost:8082/shorten/$(urlquote http://google.com))
+xdg-open $url   # gets redirected
+#+end_src
